@@ -13,6 +13,9 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
+app.get('/', (req, res) => {
+	res.send('Express on Vercel');
+});
 app.use('/users', userRoutes);
 
 const CONNECTION_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@registeredusers.82qivcn.mongodb.net/?retryWrites=true&w=majority`;
