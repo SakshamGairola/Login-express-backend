@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import userRoutes from '../routes/userRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -25,5 +25,3 @@ mongoose
 	.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => app.listen(PORT))
 	.catch((error) => console.log(`${error} did not connect`));
-
-export default app;
