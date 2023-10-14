@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import userRoutes from './routes/userRoutes.js';
+import userRoutes from '../routes/userRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -26,4 +26,4 @@ mongoose
 	.then(() => app.listen(PORT))
 	.catch((error) => console.log(`${error} did not connect`));
 
-module.exports = app;
+export default app;
